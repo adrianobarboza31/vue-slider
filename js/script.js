@@ -15,6 +15,7 @@
             return{
                 name:"adri",
                 index: 0,
+                hover: false,
                 slides:[
                     {
                         image: 'img/01.webp',
@@ -52,6 +53,21 @@
                 if (this.index > this.slides.length - 1){
                     this.index = 0;
                 }
+            },
+            autoslider(){
+                this.autoslider = setInterval(()=>{
+                   this.dopo();
+                },2000)
+            },
+            stopslider(){
+                    clearInterval(this.autoslider)
+                  
+                
+
             }
+        },
+        mounted(){
+            
+            this.autoslider();  
         }
     }).mount("#app")
